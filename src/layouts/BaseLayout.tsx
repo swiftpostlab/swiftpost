@@ -1,6 +1,7 @@
 import { Stack } from '@mui/material'
 import Head from 'next/head'
 import React from 'react'
+import EditingLayout from './EditingLayout'
 
 export interface BaseLayoutMeta {
   title: string
@@ -14,7 +15,7 @@ interface Props {
 
 const BaseLayout: React.FC<Props> = ({ children }) => {
   return (
-    <>
+    <EditingLayout>
       <Head>
         <title>Fast Forward</title>
         <meta name="description" content="Generated with Fast Forward" />
@@ -41,7 +42,7 @@ const BaseLayout: React.FC<Props> = ({ children }) => {
           </Stack>
         </Stack>
       </main>
-    </>
+    </EditingLayout>
   )
 }
 
