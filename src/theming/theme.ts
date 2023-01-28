@@ -1,14 +1,6 @@
 import { createTheme } from "@mui/material"
+import themeConfig from '../../config/theme.json'
 
-const theme = createTheme({
-  typography: {
-    h1: {
-      fontSize: '2rem',
-    },
-    h4: {
-      fontSize: '1.2rem',
-    },
-  },
-})
+const theme = createTheme(themeConfig)
 
 export default theme

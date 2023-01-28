@@ -6,7 +6,7 @@ import BaseLayout, { BaseLayoutMeta } from './BaseLayout'
 export interface HomeLayoutMeta extends BaseLayoutMeta {
   links: {
     title: string,
-    subtitle: string,
+    subtitle?: string,
     href: string,
   }[]
 }
@@ -22,6 +22,11 @@ const HomeLayout: React.FC<Props> = ({ meta, children }) => (
       <Typography variant='h1' textAlign="center">
         {meta.title}
       </Typography>
+      {meta.subtitle && (
+        <Typography variant='h2' textAlign="center">
+          {meta.subtitle}
+        </Typography>
+      )}
     </Stack>
     <Stack 
       flex={1}

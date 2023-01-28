@@ -1,13 +1,15 @@
 
+import { GetStaticProps } from 'next'
 import React from 'react'
+import siteConfig from '../config/main.json'
 import HomeLayout, { HomeLayoutMeta } from '../src/layouts/HomeLayout'
 
-export const meta: HomeLayoutMeta = {
-  title: 'Fast Forward',
-  links: [],
+
+interface Props {
+  meta: HomeLayoutMeta
 }
 
-const Index: React.FC = () => (
+const Index: React.FC<Props> = ({ meta }) => (
   <HomeLayout meta={meta}>
     <a
       href="https://github.com/fcole90/fast-forward"
@@ -19,3 +21,15 @@ const Index: React.FC = () => (
   </HomeLayout>
 )
 export default Index
+
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const index = siteConfig.routes.index
+  const indexMeta: Props['meta'] = index.content.layoutMeta
+  
+  return {
+    props: {
+      meta: indexMeta,
+    },
+  }
+}

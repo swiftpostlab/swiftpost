@@ -4,6 +4,7 @@ import React from 'react'
 
 export interface BaseLayoutMeta {
   title: string
+  subtitle?: string
 }
 
 interface Props {
