@@ -11,7 +11,7 @@
           "subtitle": "All content rendered by Fast Forward",
           "links": []
         },
-        "children": "<a\n  href=\"https://github.com/fcole90/fast-forward\"\n  target=\"_blank\"\n  rel=\"noopener noreferrer\"\n>\n  Fast Forward\n</a>"
+        "children": "[GitHub repository](https://github.com/fcole90/fast-forward)\n\nSupports Github Markdown Format, e.g. ~~striketrough~~.\n\nAll content is generated from config."
       }
     }
   }

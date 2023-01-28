@@ -1,10 +1,10 @@
 
 import { GetStaticProps } from 'next'
-import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import React from 'react'
 import siteConfig from '../config/main.json'
 import HomeLayout, { HomeLayoutMeta } from '../src/layouts/HomeLayout'
+import { serialize } from '../src/mdx/serialize'
 
 
 interface Props {
