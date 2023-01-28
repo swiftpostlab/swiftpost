@@ -1,0 +1,19 @@
+{
+  "name": "simple-blog",
+  "version": "0.1.0",
+  "routes": [
+    {
+      "name": "index",
+      "type": "page",
+      "content": {
+        "layout": "HomeLayout",
+        "layoutMeta": {
+          "title": "Simple Blog",
+          "subtitle": "Simple blog using Fast Forward",
+          "mainContent": null,
+          "navigationLinks": null
+        }
+      }
+    }
+  ]
+}

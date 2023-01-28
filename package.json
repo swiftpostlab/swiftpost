@@ -7,7 +7,10 @@
     "build": "next build",
     "export": "next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+
+    "mock": "withArgs(){ cp -r \"./mocks/$1/config\" ./config; }; withArgs"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
