@@ -2,6 +2,7 @@
   "name": "fast-forward-full",
   "version": "0.1.0",
   "private": true,
+  "main": "BE/src/main.ts",
   "scripts": {
     "mock:front": "cd FE && yarn mock",
     "dev:front": "cd FE && yarn dev",
