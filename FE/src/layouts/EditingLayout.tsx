@@ -2,7 +2,6 @@ import { Box, Button, Stack, TextField, Typography } from "@mui/material"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import siteConfig from '../../config/main.json'
-import { loadConfig, saveConfig } from "../api/io"
 import { isDevelopment } from "../api/isDevelopment"
 
 interface Props {
