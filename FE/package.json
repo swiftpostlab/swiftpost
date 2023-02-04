@@ -11,7 +11,7 @@
     "typecheck": "tsc --project tsconfig.json",
     "mock": "(rm ./config -rf || true) && withArgs(){ cp -r \"./mocks/$1/config\" ./config; }; withArgs",
     "hash": "yarn-${{ hashFiles('yarn.lock') }}s",
-    "install-immutable": "cd FE && yarn install --immutable --immutable-cache --check-cache"
+    "install-immutable": "yarn install --immutable --immutable-cache --check-cache"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
