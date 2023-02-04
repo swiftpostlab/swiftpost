@@ -3,7 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "mock:front": "cd FE && yarn mock",
     "dev:front": "cd FE && yarn dev",
-    "install:front": "cd FE && yarn"
+    "lint:front": "cd FE && yarn lint",
+    "typecheck:front": "cd FE && yarn typecheck",
+    "install:front": "cd FE && yarn",
+    "front": "yarn install:front",
+
+    "hash:front": "cd FE && yarn hash",
+    "install-immutable:front": "cd FE && yarn install-immutable",
+    "build:front": "cd FE && yarn build",
+    "export:front": "cd FE && yarn export"
   }
 }

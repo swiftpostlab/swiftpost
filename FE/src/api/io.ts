@@ -1,5 +1,5 @@
 import { readFile, writeFile } from 'fs/promises'
-import siteConfig from '../../../config/main.json'
+import siteConfig from '../../config/main.json'
 import { MAIN_CONFIG_PATH } from './constants'
 
 type Config = typeof siteConfig

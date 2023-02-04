@@ -23,21 +23,21 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: yarn-${{ hashFiles('yarn.lock') }}
+          key: yarn hash:front
           restore-keys: yarn-
 
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
-        run: yarn install --immutable --immutable-cache --check-cache
+        run: yarn install-immutable:front
       
       - name: Pull mocks
-        run: yarn mock simple-blog
+        run: yarn mock:front simple-blog
 
       - name: Build website
-        run: yarn build && yarn export
+        run: yarn build:front && yarn export:front
       
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
+          publish_dir: ./FE/out

@@ -1,11 +1,9 @@
 {
   "extends": [
-    "eslint:recommended", 
-    "plugin:@typescript-eslint/recommended"
+    "../.eslintrc.json",
+    "next/core-web-vitals",
+    "plugin:react/recommended"
   ],
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
-  "root": true,
   "rules": {
     "comma-dangle": ["error", "always-multiline"],
     "indent": ["error", 2],
