@@ -13,10 +13,6 @@
     "no-multi-spaces": "error",
     "object-curly-spacing": ["error", "always"],
     "padded-blocks": ["error", "never"],
-    "semi": ["error", "never"],
-
-    "react/react-in-jsx-scope": "off",
-    // Just leave ts infer them
-    "react/prop-types": "off"
+    "semi": ["error", "never"]
   }
 }

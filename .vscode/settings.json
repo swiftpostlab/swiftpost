@@ -3,5 +3,5 @@
     "source.organizeImports",
     "source.fixAll",
   ],
-  "eslint.workingDirectories": ["./FE"]
+  "eslint.workingDirectories": ["./FE", "./BE"]
  }
