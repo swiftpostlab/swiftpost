@@ -2,7 +2,6 @@
   "name": "fast-forward-full",
   "version": "0.1.0",
   "private": true,
-  "main": "BE/dist/main.js",
   "scripts": {
     "mock:front": "cd FE && yarn mock",
     "dev:front": "cd FE && yarn dev",
@@ -14,6 +13,9 @@
     "hash:front": "cd FE && yarn hash",
     "install-immutable:front": "cd FE && yarn install-immutable",
     "build:front": "cd FE && yarn build",
-    "export:front": "cd FE && yarn export"
+    "export:front": "cd FE && yarn export",
+
+    "start": "cd BE && yarn start",
+    "build": "cd BE && yarn build"
   }
 }

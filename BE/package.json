@@ -4,7 +4,6 @@
   "description": "",
   "author": "",
   "private": true,
-  "main": "dist/main.js",
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
