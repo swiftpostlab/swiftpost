@@ -13,10 +13,6 @@
     "hash:front": "cd FE && yarn hash",
     "install-immutable:front": "cd FE && yarn install-immutable",
     "build:front": "cd FE && yarn build",
-    "export:front": "cd FE && yarn export",
-
-    "install": "cd BE && yarn install",
-    "start": "cd BE && yarn start",
-    "build": "cd BE && yarn build"
+    "export:front": "cd FE && yarn export"
   }
 }
