@@ -1,4 +1,8 @@
-# Fast Forward
+# SwiftPost
+
+Swift web generation
+
+<https://swiftpostlab.github.io>
 
 ## Setup with a mock
 
