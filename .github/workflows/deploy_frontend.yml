@@ -1,11 +1,10 @@
-name: Deploy Web
+name: Build and Deploy
 
 on:
   push:
-    branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main", "develop" ]
 
 jobs:
   build:
@@ -17,27 +16,21 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '19'
-
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: yarn hash:front
-          restore-keys: yarn-
+          node-version: 'lts/*'
+          cache: 'yarn'
 
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: yarn install-immutable
-      
-      - name: Pull mocks
-        run: yarn mock simple-blog
+        run: yarn install --frozen-lockfile
 
       - name: Build website
         run: yarn build && yarn export
+        # env:
+        #   NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL }}
+        #   NEXT_PUBLIC_CUSTOM_ENV: ${{ vars.NEXT_PUBLIC_CUSTOM_ENV }}
       
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .out
+          publish_dir: ./out
