@@ -47,7 +47,7 @@ const EditingLayoutComponent: React.FC<Props> = ({ children }) => {
   const [mdEditorValue, setMdEditorValue] = useState('')
   const router = useRouter()
 
-  const handleLoad = async () => {
+  const handleLoad = () => {
     const routeKey = getRouteKey(router.pathname)
     const { children: childrenString, ...jsonProperties } = siteConfig.routes[routeKey].content
 
@@ -74,8 +74,7 @@ const EditingLayoutComponent: React.FC<Props> = ({ children }) => {
   
 
   useEffect(() => {
-    const f = async () => handleLoad()
-    f()
+    handleLoad()
   }, [])
 
   if (!isEditOpen) {

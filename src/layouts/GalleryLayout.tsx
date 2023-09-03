@@ -48,10 +48,10 @@ const GalleryLayout: React.FC<Props> = ({ meta }) => (
             loading="lazy"
             width="100%"
           />
-          {title && <Typography variant="h4" textAlign="left">
+          {title != null && <Typography variant="h4" textAlign="left">
             {title}
           </Typography>}
-          {caption &&
+          {caption != null &&
           <Typography variant="subtitle2" textAlign="left">
             {caption}
           </Typography>

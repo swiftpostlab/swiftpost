@@ -22,7 +22,7 @@ const HomeLayout: React.FC<Props> = ({ meta, children }) => (
       <Typography variant="h1" textAlign="center">
         {meta.title}
       </Typography>
-      {meta.subtitle && (
+      {meta.subtitle != null && (
         <Typography variant="h2" textAlign="center">
           {meta.subtitle}
         </Typography>
