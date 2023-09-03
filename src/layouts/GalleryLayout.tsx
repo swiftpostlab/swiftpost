@@ -26,7 +26,7 @@ interface Props {
 const GalleryLayout: React.FC<Props> = ({ meta }) => (
   <BaseLayout meta={meta}>
     <Stack paddingY={2} paddingX="0.5rem">
-      <Typography variant='h1' textAlign="left">
+      <Typography variant="h1" textAlign="left">
         <Link
           href={'/'}
           rel="noopener noreferrer"
@@ -35,11 +35,11 @@ const GalleryLayout: React.FC<Props> = ({ meta }) => (
         </Link>
         {meta.title}
       </Typography>
-      <Typography variant='subtitle1' textAlign="left">
+      <Typography variant="subtitle1" textAlign="left">
         {meta.subtitle}
       </Typography>
     </Stack>
-    <Stack spacing='2rem' paddingX="0.5rem">
+    <Stack spacing="2rem" paddingX="0.5rem">
       {meta.photos.map(({ title, caption, fileName }, index) => (
         <Box key={`${fileName}-${index}`}>
           <img 
@@ -48,11 +48,11 @@ const GalleryLayout: React.FC<Props> = ({ meta }) => (
             loading="lazy"
             width="100%"
           />
-          {title && <Typography variant='h4' textAlign="left">
+          {title && <Typography variant="h4" textAlign="left">
             {title}
           </Typography>}
           {caption &&
-          <Typography variant='subtitle2' textAlign="left">
+          <Typography variant="subtitle2" textAlign="left">
             {caption}
           </Typography>
           }

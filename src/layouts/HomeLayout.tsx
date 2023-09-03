@@ -19,11 +19,11 @@ interface Props {
 const HomeLayout: React.FC<Props> = ({ meta, children }) => (
   <BaseLayout meta={meta}>
     <Stack paddingY={2}>
-      <Typography variant='h1' textAlign="center">
+      <Typography variant="h1" textAlign="center">
         {meta.title}
       </Typography>
       {meta.subtitle && (
-        <Typography variant='h2' textAlign="center">
+        <Typography variant="h2" textAlign="center">
           {meta.subtitle}
         </Typography>
       )}
@@ -41,12 +41,12 @@ const HomeLayout: React.FC<Props> = ({ meta, children }) => (
         >
           <Stack>
             <Stack direction="row" alignItems="center">
-              <Typography variant='h5'>
+              <Typography variant="h5">
                 {title}
               </Typography>
               <ArrowForwardIosNewIcon />
             </Stack>
-            <Typography variant='subtitle2'>
+            <Typography variant="subtitle2">
               {subtitle}
             </Typography>
           </Stack>

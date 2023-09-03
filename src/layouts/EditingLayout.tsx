@@ -1,8 +1,8 @@
-import { Box, Button, Stack, TextField, Typography } from "@mui/material"
-import { useRouter } from "next/router"
-import { useEffect, useState } from "react"
+import { Box, Button, Stack, TextField, Typography } from '@mui/material'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 import siteConfig from '../../config/main.json'
-import { isDevelopment } from "../api/isDevelopment"
+import { isDevelopment } from '../api/isDevelopment'
 
 interface Props {
   children: React.ReactNode
@@ -98,7 +98,7 @@ const EditingLayoutComponent: React.FC<Props> = ({ children }) => {
   }
 
   return (
-    <Stack direction='row' flex={1}>
+    <Stack direction="row" flex={1}>
       <Box flex={1}>
         {children}
       </Box>

@@ -22,7 +22,7 @@ export const request = async <ResponseDataT = unknown, >(
   options?: {
     headers?: Headers, 
     body?: string
-  }
+  },
 ): Promise<Response<ResponseDataT>> => {
   const resp = await fetch(url, {
     method: type,
@@ -44,7 +44,7 @@ export const request = async <ResponseDataT = unknown, >(
 }
 
 export const post = async <BodyT = unknown, ResponseT = unknown,>(url: string, content: BodyT, headers: Headers | null = null): Promise<Response<ResponseT>> => {
-  return await request(
+  return request(
     url,
     'POST',
     {
@@ -54,18 +54,18 @@ export const post = async <BodyT = unknown, ResponseT = unknown,>(url: string, c
         ...headers,
       },
       body: JSON.stringify(content),
-    }
+    },
   )
 }
 
 export const get = async <ResponseT = unknown,>(url: string, headers: Headers | null = null): Promise<Response<ResponseT>> => {
-  return await request(
+  return request(
     url,
     'GET',
     {
       headers: {
         ...headers,
       },
-    }
+    },
   )
 }

@@ -2,7 +2,7 @@ import { serialize as mdxSerialize } from 'next-mdx-remote/serialize'
 import { rehypePlugins, remarkPlugins } from '../../next.config.mjs'
 
 export const serialize = async (source: string) => (
-  await mdxSerialize(
+  mdxSerialize(
     source,
     {
       mdxOptions: {
@@ -10,6 +10,6 @@ export const serialize = async (source: string) => (
         rehypePlugins,
         format: 'mdx',
       },
-    }
+    },
   )
 )

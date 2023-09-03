@@ -1,7 +1,7 @@
-import Typography from "@mui/material/Typography"
-import type { MDXComponents } from "mdx/types"
-import type { ComponentProps } from "react"
-import React from "react"
+import Typography from '@mui/material/Typography'
+import type { MDXComponents } from 'mdx/types'
+import type { ComponentProps } from 'react'
+import React from 'react'
 
 const getTextualComponent = <MDXProps extends JSX.IntrinsicElements[keyof JSX.IntrinsicElements],>(variant: ComponentProps<typeof Typography>['variant']) => {
   const Text: React.FC<MDXProps> = ({ children, ...props }) => (
