@@ -1,7 +1,8 @@
 import { Stack } from '@mui/material'
 import Head from 'next/head'
-import React from 'react'
-import EditingLayout from './EditingLayout'
+import React, { useContext } from 'react'
+import { SessionContext } from '../auth/contexts/SessionContext'
+import ActiveEditingLayout from './EditingLayout'
 
 export interface BaseLayoutMeta {
   title: string
@@ -13,7 +14,12 @@ interface Props {
   children?: React.ReactNode
 }
 
+const EmptyEditingLayout: typeof ActiveEditingLayout = ({ children }) => (<>{children}</>)
+
 const BaseLayout: React.FC<Props> = ({ children }) => {
+  const session = useContext(SessionContext)
+  const EditingLayout = session.isActive() ? ActiveEditingLayout : EmptyEditingLayout
+
   return (
     <EditingLayout>
       <Head>

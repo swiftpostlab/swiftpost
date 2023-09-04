@@ -1,8 +1,8 @@
 import { Box, Button, Stack, TextField, Typography } from '@mui/material'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import siteConfig from '../../config/main.json'
-import { isDevelopment } from '../api/isDevelopment'
+import { SessionContext } from '../auth/contexts/SessionContext'
 
 interface Props {
   children: React.ReactNode
@@ -41,7 +41,7 @@ const TextEditor: React.FC<{
   </Stack>
 )
 
-const EditingLayoutComponent: React.FC<Props> = ({ children }) => {
+const EditingLayout: React.FC<Props> = ({ children }) => {
   const [isEditOpen, setIsEditOpen] = useState(false)
   const [jsonEditorValue, setJsonEditorValue] = useState('')
   const [mdEditorValue, setMdEditorValue] = useState('')
@@ -71,6 +71,7 @@ const EditingLayoutComponent: React.FC<Props> = ({ children }) => {
   //     }
   //   )
   // }
+  const session = useContext(SessionContext)
   
 
   useEffect(() => {
@@ -80,17 +81,31 @@ const EditingLayoutComponent: React.FC<Props> = ({ children }) => {
   if (!isEditOpen) {
     return (
       <>
-        <Button 
-          variant="contained"
+        <Box
           sx={{
             position: 'absolute',
             top: '1rem',
             right: '1rem',
           }}
-          onClick={() => setIsEditOpen(true)}
         >
-        Edit
-        </Button>
+          <Stack 
+            direction="row" 
+            spacing="0.5rem"
+          >
+            <Button 
+              variant="contained"
+              onClick={() => setIsEditOpen(true)}
+            >
+            Edit
+            </Button>
+            <Button 
+              variant="outlined"
+              onClick={() => session.logout()}
+            >
+            Logout
+            </Button>
+          </Stack>
+        </Box>
         {children}
       </>
     )
@@ -123,10 +138,5 @@ const EditingLayoutComponent: React.FC<Props> = ({ children }) => {
     </Stack>
   )
 }
-
-const EmptyEditingLayout: React.FC<Props> = ({ children }) => (<>{children}</>)
-
-
-const EditingLayout = isDevelopment() ? EditingLayoutComponent : EmptyEditingLayout
 
 export default EditingLayout
