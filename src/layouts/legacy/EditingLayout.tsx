@@ -1,8 +1,8 @@
 import { Box, Button, Stack, TextField, Typography } from '@mui/material'
 import { useRouter } from 'next/router'
 import { useContext, useEffect, useState } from 'react'
-import siteConfig from '../../config/main.json'
-import { SessionContext } from '../auth/contexts/SessionContext'
+import siteConfig from '../../../config/main.json'
+import { SessionContext } from '../../auth/contexts/SessionContext'
 
 interface Props {
   children: React.ReactNode

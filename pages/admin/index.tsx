@@ -4,8 +4,8 @@ import { Stack } from '@mui/system'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useContext, useEffect, useState } from 'react'
-import { SessionContext } from '../src/auth/contexts/SessionContext'
-import AdminBaseLayout from '../src/layouts/admin/BaseLayout'
+import { SessionContext } from '../../src/auth/contexts/SessionContext'
+import AdminBaseLayout from '../../src/layouts/admin/BaseLayout'
 
 const pages = {
   home: '/',
